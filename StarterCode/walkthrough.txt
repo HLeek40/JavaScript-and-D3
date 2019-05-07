@@ -1,0 +1,34 @@
+Create the width, height and margins
+    Grab the width of the containing box
+    Tell it the height we want
+    Margin spacing
+Create the canvas
+    svg d3.select
+    This creates the chart
+Set the radius for each dot
+Create the labels
+    x labels - xtext 
+    // We create a group element to nest our bottom axes labels.
+    svg.append("g").attr("class", "xText");
+    // xText will allows us to select the group without excess code.
+    var xText = d3.select(".xText");
+    y labels
+Transform x label to place at bottom of chart
+Use the xtext class and append the 3 xtext svg files - only 3
+if doing the extra credit.
+Transform y label to place left of the chart
+
+
+Wrangling the data
+    Find the x min and max, y min and max
+    Use d3.extent to get the min and max - look in the exercises
+Perform the scaling
+    d3.xlinearScale
+    d3.ylinearScale
+Append the axes to svg
+Append the data (circles)
+Hover - mouseover and mouseout
+
+
+
+
