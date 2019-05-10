@@ -70,16 +70,16 @@ d3.csv("assets/js/data.csv")
   .attr("opacity", ".5");
 
 //add state to circles
-  var circlesGroup = chartGroup.selectAll("circle")  
-  .data(statesData) 
-  .enter()
-  .append("text")
-  .attr("x", d => xLinearScale(d.poverty))
-  .attr("y", d => xLinearScale(d.healthcare))
-  .style("font-size", "13px")
-  .style("text-anchor", "middle")
-  .style("fill", "white")
-  .text(d => (d.abbr));
+  // var circlesGroup = chartGroup.selectAll("circle")  
+  // .data(statesData) 
+  // .enter()
+  // .append("text")
+  // .attr("x", d => xLinearScale(d.poverty))
+  // .attr("y", d => xLinearScale(d.healthcare))
+  // .style("font-size", "13px")
+  // .style("text-anchor", "middle")
+  // .style("fill", "white")
+  // .text(d => (d.abbr));
 
 //Initialize tool tip 
   var toolTip = d3.tip()
@@ -108,10 +108,10 @@ d3.csv("assets/js/data.csv")
       .attr("x", 0 - (height / 2))
       .attr("dy", "1em")
       .attr("class", "axisText")
-      .text("In Poverty (%)");
+      .text("Lacks Healthcare (%)");
 
     chartGroup.append("text")
       .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
       .attr("class", "axisText")
-      .text("Lacks Healthcare (%)");
+      .text("In Poverty (%)");
 });
