@@ -69,24 +69,25 @@ d3.csv("assets/js/data.csv")
   .attr("fill", "blue")
   .attr("opacity", ".5");
 
-//add state to circles
-  // var circlesGroup = chartGroup.selectAll("circle")  
-  // .data(statesData) 
-  // .enter()
-  // .append("text")
-  // .attr("x", d => xLinearScale(d.poverty))
-  // .attr("y", d => xLinearScale(d.healthcare))
-  // .style("font-size", "13px")
-  // .style("text-anchor", "middle")
-  // .style("fill", "white")
-  // .text(d => (d.abbr));
+// Append text to circles 
+  var circlesGroup = chartGroup.selectAll()
+  .data(statesData)
+  .enter()
+  .append("text")
+  .attr("x", d => xLinearScale(d.poverty))
+  .attr("y", d => yLinearScale(d.healthcare))
+  .style("font-size", "13px")
+  .style("text-anchor", "middle")
+  .style("fill", "white")
+  .text(d => (d.abbr));
+
 
 //Initialize tool tip 
   var toolTip = d3.tip()
     .attr("class", "tooltip")
     .offset([80, -60])
     .html(function(d) {
-      return (`${d.state}<br>In Poverty %: ${d.poverty}<br>Lacks Healthcare %: ${d.healthcare}`);
+      return (`State: ${d.state}<br>In Poverty %: ${d.poverty}<br>Lacks Healthcare %: ${d.healthcare}`);
       });
 
 //Create tooltip in the chart
@@ -114,4 +115,4 @@ d3.csv("assets/js/data.csv")
       .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
       .attr("class", "axisText")
       .text("In Poverty (%)");
-});
+})
